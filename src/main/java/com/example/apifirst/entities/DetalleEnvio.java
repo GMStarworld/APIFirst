@@ -22,6 +22,7 @@ public class DetalleEnvio {
     private String transportadora;
     private Integer numero_guia;
 
-    @OneToOne(mappedBy = "detalle_envio")
+    @OneToOne
+    @JoinColumn(name = "FK_PEDIDO", referencedColumnName = "id")
     private Pedido pedido;
 }

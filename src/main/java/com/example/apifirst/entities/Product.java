@@ -24,6 +24,6 @@ public class Product {
     private Float precio;
     private Long stock;
 
-    @OneToMany(mappedBy = "productos")
-    private List<ItemPedido> producto;
+    @OneToMany(mappedBy = "producto")
+    private List<ItemPedido> item_pedido;
 }

@@ -28,5 +28,5 @@ public class ItemPedido {
 
     @ManyToOne
     @JoinColumn(name = "FK_PRODUCT")
-    private Product product;
+    private Product producto;
 }
