@@ -20,7 +20,7 @@ public class DetalleEnvio {
     private UUID id;
     private String direccion;
     private String transportadora;
-    private Integer numero_guia;
+    private Integer numeroGuia;
 
     @OneToOne
     @JoinColumn(name = "FK_PEDIDO", referencedColumnName = "id")

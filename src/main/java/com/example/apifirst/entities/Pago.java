@@ -20,11 +20,11 @@ public class Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private Float total_pago;
+    private Float totalPago;
     @Temporal(TemporalType.DATE)
-    private LocalDate fecha_pago;
+    private LocalDate fechaPago;
     @Enumerated(EnumType.STRING)
-    private PagoMetodo metodo_pago;
+    private PagoMetodo metodoPago;
 
     @OneToOne
     @JoinColumn(name = "FK_PEDIDO", referencedColumnName = "id")

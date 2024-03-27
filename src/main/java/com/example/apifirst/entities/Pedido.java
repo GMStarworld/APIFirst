@@ -31,10 +31,10 @@ public class Pedido {
     private Cliente cliente;
 
     @OneToMany(mappedBy = "pedido")
-    private List<ItemPedido> pedido;
+    private List<ItemPedido> itemPedido;
 
     @OneToOne(mappedBy = "pedido")
-    private DetalleEnvio detalle_envio;
+    private DetalleEnvio detalleEnvio;
 
     @OneToOne(mappedBy = "pedido")
     private Pago pago;
