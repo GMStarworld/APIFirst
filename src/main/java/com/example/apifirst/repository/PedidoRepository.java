@@ -14,6 +14,6 @@ public interface PedidoRepository extends JpaRepository<Pedido, UUID> {
     List<Pedido> findByFechaBetween(LocalDate fechaIni, LocalDate fechaFin);
     List<Pedido> findByCliente_IdAndEstado(UUID id, PedidoStatus estado);
 
-    @Query("SELECT ped FROM Pedido ped JOIN FETCH ped.item_pedido WHERE ped.cliente.id = ?1")
+    @Query("SELECT ped FROM Pedido ped JOIN FETCH ped.itemPedido WHERE ped.cliente.id = ?1")
     List<Pedido> findByClienteWithItems(UUID clienteID);
 }
