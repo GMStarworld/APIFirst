@@ -1,3 +1,23 @@
 package com.example.apifirst.enumerations;
 
-public enum PagoMetodo {EFECTIVO, TARJETA_CREDITO, PAYPAL, NEQUI, DAVIPLATA, PSE;}
+public enum PagoMetodo {
+
+    EFECTIVO,
+    TARJETA_CREDITO,
+    PAYPAL,
+    NEQUI,
+    DAVIPLATA,
+    PSE;
+
+    public static PagoMetodo fromString(String value) {
+        return switch (value.toUpperCase()) {
+            case "EFECTIVO" -> EFECTIVO;
+            case "TARJETA_CREDITO" -> TARJETA_CREDITO;
+            case "PAYPAL" -> PAYPAL;
+            case "NEQUI" -> NEQUI;
+            case "DAVIPLATA" -> DAVIPLATA;
+            case "PSE" -> PSE;
+            default -> throw new IllegalArgumentException("Valor de método de pago inválido: " + value);
+        };
+    }
+}

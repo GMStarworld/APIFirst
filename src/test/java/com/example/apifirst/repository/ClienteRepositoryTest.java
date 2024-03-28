@@ -66,11 +66,13 @@ class ClienteRepositoryTest extends AbstractIntegrationDBTest {
                 .build()
         );
         //When
-        clienteCreated.setNombre("Hassan");
-        clienteCreated.setDireccion("El rodadero");
+        Cliente clienteUpdated=clienteCreated;
+        clienteUpdated.setNombre("Hassan");
+        clienteUpdated.setDireccion("El rodadero");
+        clienteUpdated=clienteRepository.save(clienteUpdated);
         //Then
-        assertThat(clienteCreated.getNombre()).matches("Hassan");
-        assertThat(clienteCreated.getDireccion()).matches("El rodadero");
+        assertThat(clienteUpdated.getNombre()).matches("Hassan");
+        assertThat(clienteUpdated.getDireccion()).matches("El rodadero");
     }
 
     @Test

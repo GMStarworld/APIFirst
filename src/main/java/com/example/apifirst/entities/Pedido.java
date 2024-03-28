@@ -2,10 +2,7 @@ package com.example.apifirst.entities;
 
 import com.example.apifirst.enumerations.PedidoStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -15,6 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Setter
 @Getter
+@Builder
 @Entity
 @Table(name ="pedidos")
 public class Pedido {
