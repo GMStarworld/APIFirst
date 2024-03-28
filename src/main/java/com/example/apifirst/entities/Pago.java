@@ -2,10 +2,7 @@ package com.example.apifirst.entities;
 
 import com.example.apifirst.enumerations.PagoMetodo;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -14,6 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Setter
 @Getter
+@Builder
 @Entity
 @Table(name ="pagos")
 public class Pago {
