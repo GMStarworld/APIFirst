@@ -19,15 +19,15 @@ public class productController {
         this.productService=productService;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ProductDto> getProductByid(@PathVariable UUID id){
-        ProductDto productFound=productService.buscarProductById(id);
-        return ResponseEntity.ok().body(productFound);
-    }
-
     @GetMapping()
     public ResponseEntity<List<ProductDto>> getAllProducts(){
         List<ProductDto> productFound=productService.getAllProducts();
+        return ResponseEntity.ok().body(productFound);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductDto> getProductByid(@PathVariable UUID id){
+        ProductDto productFound=productService.buscarProductById(id);
         return ResponseEntity.ok().body(productFound);
     }
 
