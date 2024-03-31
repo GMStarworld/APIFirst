@@ -9,6 +9,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface ClienteMapper {
     Cliente clienteDtoToEntity(ClienteDto clienteDto);
+    @Mapping(target="pedidos", expression="java(new ArrayList<>())")
     ClienteDto entityToDto(Cliente cliente);
 
     @Mapping(target ="id", ignore = true)

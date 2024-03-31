@@ -28,12 +28,12 @@ public class Pedido {
     @JoinColumn(name = "FK_CLIENTE", nullable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "pedido")
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
     private List<ItemPedido> itemPedido;
 
-    @OneToOne(mappedBy = "pedido")
+    @OneToOne(mappedBy = "pedido", cascade = CascadeType.ALL)
     private DetalleEnvio detalleEnvio;
 
-    @OneToOne(mappedBy = "pedido")
+    @OneToOne(mappedBy = "pedido", cascade = CascadeType.ALL)
     private Pago pago;
 }

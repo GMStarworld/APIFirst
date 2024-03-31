@@ -32,7 +32,10 @@ public class PedidoServiceImp implements PedidoService{
     @Override
     public PedidoDto guardarPedido(PedidoToSaveDto pedido) {
         Pedido pedidoSaved=pedidoMapper.pedidoDtoToSaveToEntity(pedido);
-        pedidoSaved.setCliente(clienteRepository.findById(pedido.cliente().id()).get());
+        Optional<Cliente> clienteFound=clienteRepository.findById(pedido.cliente().id());
+        pedidoSaved.setCliente(clienteFound.get());
+        pedidoSaved=pedidoRepository.save(pedidoSaved);
+        System.out.print(pedidoSaved);
         return pedidoMapper.entityToPedidoDto(pedidoSaved);
     }
 
@@ -61,7 +64,13 @@ public class PedidoServiceImp implements PedidoService{
 
     @Override
     public List<PedidoDto> getAllPedidos() {
-        return null;
+        List<Pedido> pedidoFound=pedidoRepository.findAll();
+        List<PedidoDto> foundToDto=new ArrayList<>();
+        pedidoFound.forEach(pedido -> {
+            PedidoDto c=pedidoMapper.entityToPedidoDto(pedido);
+            foundToDto.add(c);
+        });
+        return foundToDto;
     }
 
     @Override

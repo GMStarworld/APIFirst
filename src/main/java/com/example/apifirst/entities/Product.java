@@ -22,6 +22,6 @@ public class Product {
     private Float precio;
     private Long stock;
 
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
     private List<ItemPedido> item_pedido;
 }

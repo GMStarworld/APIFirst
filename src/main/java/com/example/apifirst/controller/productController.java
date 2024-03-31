@@ -25,6 +25,12 @@ public class productController {
         return ResponseEntity.ok().body(productFound);
     }
 
+    @GetMapping()
+    public ResponseEntity<List<ProductDto>> getAllProducts(){
+        List<ProductDto> productFound=productService.getAllProducts();
+        return ResponseEntity.ok().body(productFound);
+    }
+
     @GetMapping("/search ")
     public ResponseEntity<List<ProductDto>> getProductByNombre(@RequestParam("searchTerm")String nombre){
         List<ProductDto> productFound=productService.findByNombre(nombre);

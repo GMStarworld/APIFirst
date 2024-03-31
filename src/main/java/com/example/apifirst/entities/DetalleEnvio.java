@@ -20,7 +20,7 @@ public class DetalleEnvio {
     private String transportadora;
     private Integer numeroGuia;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "FK_PEDIDO", referencedColumnName = "id")
     private Pedido pedido;
 }
