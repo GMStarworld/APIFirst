@@ -22,9 +22,7 @@ import java.util.UUID;
 public class ItemPedidoServiceImp implements ItemPedidoService{
 
     private final ItemPedidoRepository itemPedidoRepository;
-
     private final PedidoRepository pedidoRepository;
-
     private final ProductRepository productRepository;
     private final ItemPedidoMapper itemPedidoMapper;
 

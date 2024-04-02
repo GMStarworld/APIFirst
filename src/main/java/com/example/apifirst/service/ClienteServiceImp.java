@@ -19,7 +19,6 @@ import java.util.UUID;
 @Service
 public class ClienteServiceImp implements ClienteService{
     private final ClienteRepository clienteRepository;
-    @Autowired
     private final ClienteMapper clienteMapper;
 
     public ClienteServiceImp (ClienteRepository clienteRepository, ClienteMapper clienteMapper){
